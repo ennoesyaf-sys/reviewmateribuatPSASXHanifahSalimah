@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review PSAS Kelas 10</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+/* Plan: ink + paper tokens; one accent per bab (teal / amber / indigo). Layout: tab bar, strategy cards, short text, one-by-one question cards. */
+:root{--bg:#f7f8f9;--card:#ffffff;--ink:#17212b;--mut:#5d6b7a;--line:#dfe5ea;--ok:#15803d;--okbg:#e6f6ec;--no:#b42318;--nobg:#fdeceb;--c1:#0f766e;--c1bg:#e2f3f1;--c2:#b45309;--c2bg:#fbefdc;--c3:#4338ca;--c3bg:#e9e8fb;--acc:var(--c1);--accbg:var(--c1bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161c;--card:#18212a;--ink:#e8edf2;--mut:#9aa8b6;--line:#2a3643;--ok:#4ade80;--okbg:#14301f;--no:#f87171;--nobg:#381a19;--c1:#5eead4;--c1bg:#12302d;--c2:#fbbf24;--c2bg:#33260f;--c3:#a5b4fc;--c3bg:#1f2147;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10161c;--card:#18212a;--ink:#e8edf2;--mut:#9aa8b6;--line:#2a3643;--ok:#4ade80;--okbg:#14301f;--no:#f87171;--nobg:#381a19;--c1:#5eead4;--c1bg:#12302d;--c2:#fbbf24;--c2bg:#33260f;--c3:#a5b4fc;--c3bg:#1f2147;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif;padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:22px 0 14px}
+header h1{font-size:26px;line-height:1.15;margin:0 0 6px;font-weight:800;text-wrap:balance}
+header p{margin:0;color:var(--mut);max-width:60ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 14px;font:600 14px Inter,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}
+.tab[aria-selected=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+:root[data-theme="dark"] .tab[aria-selected=true],:root:not([data-theme="light"]) .tab[aria-selected=true]{color:#10161c}
+.tab .sc{font-size:12px;font-weight:700;opacity:.85}
+.tab:focus-visible,.opt:focus-visible,.hintbtn:focus-visible,.reset:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+h2{font-size:19px;margin:22px 0 10px;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.step b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.strat{display:grid;gap:8px}
+.tip{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:10px;padding:11px 14px}
+.tip b{display:block;margin-bottom:2px}
+.tip span{color:var(--mut)}
+.vt{border-collapse:collapse;width:100%;margin-top:6px;color:var(--ink);font-size:14px}.vt th,.vt td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}.vt th{background:var(--accbg)}.tip code,.hint code{font:600 13px Inter,sans-serif;background:var(--accbg);color:var(--ink);padding:1px 6px;border-radius:6px}
+.text{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font:17px/1.6 'Source Serif 4',Georgia,serif;margin-bottom:14px}
+.text h3{margin:0 0 8px;font:700 17px Inter,sans-serif;text-align:center}
+.text p{margin:0 0 8px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.qn{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.stem{font-weight:600;margin:3px 0 10px;white-space:pre-line}
+.opts{display:grid;gap:7px}
+.opt{display:grid;grid-template-columns:26px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px 11px;font:inherit;cursor:pointer;min-width:0}
+.opt:hover:not([disabled]){border-color:var(--acc)}
+.opt .l{font-weight:700;color:var(--mut)}
+.opt.right{background:var(--okbg);border-color:var(--ok)}
+.opt.wrong{background:var(--nobg);border-color:var(--no)}
+.opt[disabled]{cursor:default}
+.hintbtn,.reset{margin-top:10px;border:0;background:none;color:var(--acc);font:600 13px Inter,sans-serif;cursor:pointer;padding:4px 0}
+.hint{margin-top:8px;background:var(--accbg);border-radius:9px;padding:9px 12px;font-size:14px}
+.fb{margin-top:10px;border-radius:9px;padding:10px 12px;font-size:14px}
+.fb.ok{background:var(--okbg)}.fb.no{background:var(--nobg)}
+.fb strong{display:block;margin-bottom:2px}
+.ev{font-family:'Source Serif 4',Georgia,serif;font-style:italic}
+.sum{background:var(--accbg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:6px}
+.sum b{font-size:18px}
+.bar{height:8px;border-radius:99px;background:var(--line);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .3s}
+.top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.pill{font-weight:700;font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 12px}
+#nav{display:none}
+.two{display:block}
+body.pres{font-size:22px;padding-bottom:96px}
+.pres .wrap{max-width:1240px}
+.pres header{padding:8px 0 4px}.pres header p{display:none}.pres h1{font-size:22px}
+.pres h2{font-size:34px;margin:12px 0}
+.pres .tip,.pres .step{font-size:23px;padding:16px 20px;line-height:1.5}
+.pres .tip code,.pres .hint code{font-size:20px}
+.pres .text{font-size:30px;line-height:1.55;padding:24px 30px}.pres .text h3{font-size:26px}
+.pres .q{padding:20px 24px}.pres .qn{font-size:16px}
+.pres .stem{font-size:30px;line-height:1.4}
+.pres .opts{gap:10px}
+.pres .opt{font-size:27px;padding:14px 18px;grid-template-columns:42px 1fr}
+.pres .hint,.pres .fb{font-size:23px;padding:14px 18px}
+.pres .vt{font-size:22px}
+.pres .tab{font-size:16px}
+.pres .hintbtn,.pres .reset{font-size:20px;padding:8px 0}
+.pres .sum b{font-size:30px}.pres .sum span{font-size:22px}
+.pres #nav{display:flex;position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:10px 16px;justify-content:center;gap:18px;align-items:center;z-index:5}
+#nav button{font:700 20px Inter,sans-serif;border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:12px;padding:10px 28px;cursor:pointer}
+#nav button[disabled]{opacity:.35;cursor:default}
+#nav span{font:700 20px Inter,sans-serif;min-width:90px;text-align:center}
+@media (min-width:1000px){.pres .two{display:grid;grid-template-columns:5fr 6fr;gap:22px;align-items:start}.pres .two .text{position:sticky;top:8px;margin:0}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+ <div class="top"><h1>Review PSAS Bahasa Inggris Kelas 10</h1><span><button class="pill" id="pbtn" type="button" style="cursor:pointer;color:var(--ink)">Mode proyektor</button> <span class="pill" id="total">Skor total 0</span></span></div>
+ <p>Tiga bab, tiap bab punya strategi singkat, ringkasan grammar, satu teks pendek, dan soal membaca serta grammar. Coba jawab dulu. Kunci dan alasannya muncul setelah kamu memilih.</p>
+</header>
+<div class="tabs" role="tablist" id="tabs"></div>
+<main id="main"></main>
+<div id="nav"><button id="pv" type="button">← Sebelumnya</button><span id="pn"></span><button id="nx" type="button">Berikutnya →</button></div>
+</div>
+<script>
+var BABS=[
+{id:'d',name:'Descriptive Text',col:'c1',
+ tips:[
+  ['Gagasan utama','Baca judul dan kalimat pertama tiap paragraf. Jawaban harus mencakup <b>semua</b> paragraf, bukan satu detail.'],
+  ['Sudut pandang','Tandai siapa yang bicara (<code>For a traveller</code>, <code>For Mr. Hadi</code>), lalu cari kata sifat yang dipakai tokoh itu.'],
+  ['Kata ganti (it, they, its)','Kembali satu kalimat ke belakang. Ganti kata ganti dengan jawabanmu, lalu baca ulang kalimatnya.'],
+  ['Sinonim dalam konteks','Masukkan tiap opsi ke kalimat. Yang kalimatnya tetap masuk akal adalah jawabannya.'],
+  ['Simple present dan kata sifat','Fakta dan kebiasaan memakai simple present: <code>he / she / it + verb-s</code>. Setelah <code>is, smells, looks, feels</code> pakai kata sifat, bukan kata keterangan.']],
+ gram:[
+  ['Simple present','S + verb 1 (he/she/it + verb-s/es). Negatif: <code>do/does + not + verb 1</code>. Tanya: <code>Do/Does + S + verb 1?</code>. Dipakai untuk fakta dan kebiasaan: <i>The school has a big garden.</i>'],
+  ['To be: am, is, are','I am, he/she/it is, you/we/they are. Deskripsi memakai <code>be + adjective</code>: <i>The beach is beautiful.</i>'],
+  ['Descriptive adjectives','Adjective berada sebelum noun atau setelah be/linking verb. Urutan: pendapat, ukuran, warna, asal: <i>a beautiful long red dress.</i> Pasangan preposisi dibahas di kartu berikutnya.'],
+  ['Adjective + preposition','Beberapa adjective selalu berpasangan dengan preposisi tertentu: <code>famous for</code> / <code>known for</code> (terkenal karena), <code>full of</code> (penuh dengan), <code>good at</code> (pandai dalam), <code>interested in</code> (tertarik pada), <code>proud of</code> (bangga akan), <code>afraid of</code> (takut akan), <code>different from</code> (berbeda dari), <code>similar to</code> (mirip dengan), <code>crowded with</code> (ramai dengan), <code>worried about</code> (khawatir tentang), <code>surprised at</code> (terkejut oleh). Setelah preposisi pakai noun atau V-ing: <i>good at drawing.</i>']],
+ text:{title:'The Old Train Station',p:['For a traveller, the old train station is a calm and charming place. Its tall clock and wooden benches look beautiful in the morning light. The air smells like fresh coffee from the small café.','For Mr. Hadi, the ticket seller, it is a busy and noisy place. Hundreds of passengers rush past his window every day. He hears loud whistles and announcements all morning, so he feels tired by noon.']},
+ qs:[
+ {s:'What is the text mainly about?',o:['The history of trains in Indonesia.','One station seen by two different people.','How to buy a ticket at a station.','The people who work in a small café.','A traveller’s trip to a famous city.'],a:1,h:'Lihat dua paragraf: apa yang sama-sama dibahas?',w:'Paragraf 1 dan 2 membahas stasiun yang sama dari dua orang.',e:'For a traveller, the old train station… / For Mr. Hadi, … it is a busy and noisy place.'},
+ {s:'How does the traveller feel about the station?',o:['It is crowded and tiring.','It is old and boring.','It is noisy and exciting.','It is calm and charming.','It is dark and unsafe at night.'],a:3,h:'Cari kalimat yang diawali “For a traveller”.',w:'Perhatikan: crowded dan tiring adalah perasaan Mr. Hadi, bukan si pelancong.',e:'…the old train station is a calm and charming place.'},
+ {s:'Why does Mr. Hadi feel tired by noon?',o:['He drinks too much coffee at the café.','He walks around the station many times.','He hears loud sounds and sees many passengers all morning.','He waits for the train all day.','His wooden bench is uncomfortable.'],a:2,h:'Cari kata penghubung sebab (so, because) di paragraf kedua.',w:'Kalimat “so he feels tired by noon” didahului penyebabnya.',e:'Hundreds of passengers rush past his window… He hears loud whistles and announcements all morning, so he feels tired by noon.'},
+ {s:'The word “it” in “For Mr. Hadi, the ticket seller, it is a busy and noisy place” refers to …',o:['the ticket window','Mr. Hadi','the morning light','the small café','the old train station'],a:4,h:'Kata ganti merujuk ke hal yang dibahas sejak awal teks.',w:'Dua paragraf sama-sama membicarakan stasiun.',e:'For a traveller, the old train station is… / …it is a busy and noisy place.'},
+ {s:'The word “rush” in the second paragraph is closest in meaning to …',o:['wait','wander','hurry','stay','relax'],a:2,h:'Masukkan tiap opsi: “Hundreds of passengers … past his window”.',w:'Penumpang yang lewat di stasiun sibuk bergerak cepat.',e:'Hundreds of passengers rush past his window every day.'},
+ {s:'The old market smells ___ in the morning.',o:['freshly','freshness','to fresh','fresh','freshen'],a:3,h:'Kata kerja smells diikuti kata sifat atau kata keterangan?',w:'Linking verb (smell, look, feel) diikuti adjective: <b>fresh</b>.',e:'smells + adjective → smells fresh'},
+ {s:'My cousin ___ a small shop near the bus terminal.',o:['own','owned','owning','is own','owns'],a:4,h:'Subjek tunggal (he/she/it) di simple present.',w:'My cousin = he/she → verb + s.',e:'My cousin owns…'},
+ {s:'Which sentence is correct?',o:['The park are very clean.','The park is very clean.','The park be very clean.','The park very clean is.','The park is very cleanly.'],a:1,h:'Periksa be yang cocok untuk “the park” dan jenis kata setelahnya.',w:'The park (tunggal) + is + adjective (clean).',e:'The park is very clean.'},
+ {s:'My grandmother ___ not like spicy food.',o:['does','do','is','are','has'],a:0,h:'Subjek he/she/it pada kalimat negatif simple present.',w:'Pola: does + not + verb 1.',e:'My grandmother does not like spicy food.'},
+ {s:'She wears a ___ dress to the party.',o:['red beautiful long','long beautiful red','beautiful long red','long red beautiful','red long beautiful'],a:2,h:'Urutan adjective: pendapat, ukuran, warna.',w:'beautiful (pendapat) + long (ukuran) + red (warna).',e:'a beautiful long red dress'},
+ {s:'The beach is famous ___ its white sand.',o:['of','at','to','on','for'],a:4,h:'Kolokasi tetap setelah famous.',w:'famous for = terkenal karena.',e:'famous for its white sand'},
+ {s:'Which word is an adjective in the sentence?\nThe tall guide spoke quietly.',o:['spoke','tall','guide','quietly','The'],a:1,h:'Adjective menerangkan noun.',w:'tall menerangkan guide. Quietly adalah adverb.',e:'The tall guide'},
+ {s:'Our teacher is very proud ___ our school’s achievements.',o:['of','at','with','to','for'],a:0,h:'Pasangan tetap setelah proud.',w:'proud of = bangga akan.',e:'proud of'},
+ {s:'My sister is good ___ drawing animals.',o:['for','with','of','at','to'],a:3,h:'Pasangan tetap setelah good (kemampuan).',w:'good at + V-ing.',e:'good at drawing'},
+ {s:'The market is full ___ fresh fruit.',o:['with','of','in','by','to'],a:1,h:'Pasangan tetap setelah full.',w:'full of = penuh dengan.',e:'full of fresh fruit'},
+ {s:'This village is very different ___ the city. It is quiet and green.',o:['to','with','from','than','by'],a:2,h:'Pasangan tetap setelah different.',w:'different from = berbeda dari.',e:'different from the city'}]},
+{id:'n',name:'Narrative Text',col:'c2',
+ tips:[
+  ['Urutan peristiwa','Cari penanda waktu: <code>One day, suddenly, the next day, after that</code>. Urutkan kejadian dengan penanda itu.'],
+  ['Watak tokoh','Lihat apa yang tokoh <b>lakukan</b> dan <b>rasakan</b> di akhir cerita, bukan hanya satu kata sifat.'],
+  ['Pertanyaan “Why”','Cari <code>because, so, since</code>. Sebab ada sebelum <code>so</code> dan sesudah <code>because</code>.'],
+  ['Pesan moral','Tanyakan: apa yang berubah pada tokoh? Pelajarannya bersifat umum, biasanya diawali <code>We should…</code>.'],
+  ['Simple past tense','Petunjuk waktu (<code>yesterday, last Sunday, ago</code>) berarti verb 2. Waspadai bentuk tak beraturan: ride → rode, find → found.']],
+ gram:[
+  ['Simple past: kapan dan rumusnya','Untuk kejadian yang <b>sudah selesai</b> di masa lalu. Rumus: <code>S + verb 2</code>. Penanda: yesterday, last week, two days ago, one day, in 2020. Cerita naratif hampir seluruhnya memakai verb 2.'],
+  ['Regular verbs: ikuti aturan, cukup tambah -ed','<table class="vt"><tr><th>Aturan</th><th>Contoh</th></tr><tr><td>Umumnya + <b>ed</b></td><td>walk → walked<br>play → played<br>help → helped</td></tr><tr><td>Berakhiran e: + <b>d</b></td><td>live → lived<br>love → loved<br>save → saved</td></tr><tr><td>Konsonan + y: y → <b>ied</b></td><td>study → studied<br>cry → cried<br>carry → carried</td></tr><tr><td>Vokal + y: tetap + ed</td><td>play → played<br>enjoy → enjoyed</td></tr><tr><td>1 vokal + 1 konsonan: konsonan digandakan</td><td>stop → stopped<br>plan → planned<br>drop → dropped</td></tr></table>'],
+  ['Irregular verbs: tidak mengikuti aturan, harus dihafal','<table class="vt"><tr><th>Pola</th><th>V1 – V2</th></tr><tr><td>Bentuk sama</td><td>put – put<br>cut – cut<br>hit – hit<br>read – read (dibaca “red”)</td></tr><tr><td>-ought / -aught</td><td>buy – bought<br>bring – brought<br>think – thought<br>catch – caught<br>teach – taught</td></tr><tr><td>Vokal berubah</td><td>begin – began<br>drink – drank<br>sing – sang<br>swim – swam<br>run – ran</td></tr><tr><td>-ew</td><td>know – knew<br>grow – grew<br>throw – threw<br>fly – flew</td></tr><tr><td>Berubah total (hafalkan)</td><td>go – went<br>see – saw<br>take – took<br>give – gave<br>make – made<br>say – said<br>eat – ate<br>come – came<br>find – found<br>get – got<br>have – had<br>ride – rode<br>write – wrote<br>sit – sat<br>tell – told<br>meet – met<br>leave – left<br>lose – lost<br>feel – felt</td></tr></table>'],
+  ['Regular atau irregular? Cara membedakannya','Jika verb ada di daftar tak beraturan, pakai bentuk khususnya. Jika tidak, tambahkan -ed. Kesalahan umum: <i>goed, buyed, finded, writed</i> (salah). Yang benar: <i>went, bought, found, wrote</i>. Pelafalan -ed: <code>/t/</code> setelah bunyi tak bersuara (walked, helped), <code>/d/</code> setelah bunyi bersuara (played, lived), <code>/id/</code> setelah t atau d (wanted, needed).'],
+  ['Negatif, tanya, dan was/were','<code>S + did not + verb 1</code> dan <code>Did + S + verb 1?</code>. Setelah did, verb kembali ke bentuk dasar: <i>She did not see</i> (bukan saw). Untuk be: I/he/she/it → <code>was</code>, you/we/they → <code>were</code>: <i>The princess was happy.</i>']],
+ text:{title:'The Lost Kite',p:['Rafi loved flying kites. One windy afternoon, he made a big red kite and ran to the field. The kite rose high, but suddenly the string broke, and the kite flew away. Rafi was very sad and walked home slowly.','The next day, his neighbour, Mr. Budi, brought the kite back. He had found it in his garden. Rafi thanked him happily. After that, he always checked the string before he played.']},
+ qs:[
+ {s:'What happened right after the string broke?',o:['Mr. Budi found the kite.','Rafi made a new kite.','Rafi thanked his neighbour.','Rafi ran to the field.','The kite flew away.'],a:4,h:'Cari kalimat yang memuat “the string broke”. Apa kejadian berikutnya?',w:'Opsi lain terjadi sebelum atau setelah beberapa kalimat.',e:'…suddenly the string broke, and the kite flew away.'},
+ {s:'What kind of boy is Rafi?',o:['He learns from his mistake.','He blames other people.','He is afraid of windy days.','He gets angry very easily.','He is selfish with his things.'],a:0,h:'Lihat perbuatannya di akhir cerita.',w:'Setelah kehilangan layangan, ia selalu memeriksa tali.',e:'After that, he always checked the string before he played.'},
+ {s:'Why did Rafi check the string after that?',o:['Mr. Budi told him to do it.','The string was very expensive.','He wanted to fly higher than before.','He did not want to lose his kite again.','He wanted to make another kite.'],a:3,h:'Hubungkan dengan kejadian saat tali putus.',w:'Alasan tidak tertulis langsung. Kamu menyimpulkan dari urutan kejadian.',e:'…the string broke, and the kite flew away. … he always checked the string.'},
+ {s:'What can we learn from the story?',o:['We should buy a new kite when the old one breaks.','We should stay away from our neighbours.','We should be careful with our things.','We should give up when we feel sad.','We should wait for good weather before we play.'],a:2,h:'Pelajaran dari perubahan sikap tokoh.',w:'Rafi menjadi lebih hati-hati dengan layangannya.',e:'After that, he always checked the string…'},
+ {s:'The phrase “After that” in the last sentence shows …',o:['a reason','a place','a comparison','the order of events','an opinion'],a:3,h:'Kata penghubung waktu menunjukkan apa?',w:'After that = sesudah itu, urutan waktu.',e:'The next day… Rafi thanked him… After that, he always checked…'},
+ {s:'Last Sunday, my brother ___ his bicycle to the market.',o:['ride','rides','rode','riding','was ride'],a:2,h:'Last Sunday = waktu lampau. Ingat verb 2 tak beraturan.',w:'ride → rode.',e:'Last Sunday + verb 2 → rode'},
+ {s:'Yesterday it ___ heavily, so we stayed at home.',o:['rains','rain','raining','has rain','rained'],a:4,h:'Cari petunjuk waktu di awal kalimat.',w:'Yesterday dan stayed menunjukkan past tense.',e:'Yesterday it rained heavily…'},
+ {s:'Which sentence is correct?',o:['She found her keys under the sofa.','She finded her keys under the sofa.','She founded her keys under the sofa.','She find her keys under the sofa.','She is found her keys under the sofa.'],a:0,h:'Find adalah verb tak beraturan.',w:'find → found (bukan finded). Founded artinya mendirikan.',e:'She found her keys…'},
+ {s:'The farmer ___ not see the hole, so he fell.',o:['do','did','does','was','is'],a:1,h:'Kalimat negatif dengan waktu lampau.',w:'did + not + verb 1 (see).',e:'did not see'},
+ {s:'They ___ to the zoo last month.',o:['go','goes','going','went','are go'],a:3,h:'Last month menunjukkan waktu lampau.',w:'go → went.',e:'Last month → went'},
+ {s:'Did she ___ the story yesterday?',o:['finish','finished','finishes','finishing','to finish'],a:0,h:'Setelah did, verb berbentuk dasar.',w:'Did + S + verb 1.',e:'Did she finish…?'},
+ {s:'The princess ___ happy because the prince saved her.',o:['is','are','be','been','was'],a:4,h:'Cari petunjuk waktu lampau (saved).',w:'Subjek tunggal lampau → was.',e:'The princess was happy…'},
+ {s:'Last night, she ___ for the exam until midnight.',o:['studyed','studied','studys','studing','study'],a:1,h:'Verb diakhiri konsonan + y.',w:'Konsonan + y → y menjadi i + ed: studied.',e:'study → studied'},
+ {s:'The driver ___ at the red light.',o:['stoped','stops','stopped','stopt','stoping'],a:2,h:'1 vokal + 1 konsonan: konsonan digandakan.',w:'stop → stopped (p digandakan).',e:'stop → stopped'},
+ {s:'We ___ a loud noise from the kitchen.',o:['heard','hear','hearing','heared','hears'],a:0,h:'Hear termasuk irregular.',w:'hear → heard. Bukan heared.',e:'hear → heard'},
+ {s:'My brother ___ a letter to his grandmother last week.',o:['writed','wrote','written','writes','write'],a:1,h:'Last week = lampau. Write adalah irregular.',w:'write → wrote.',e:'write → wrote'},
+ {s:'Which past form is regular?',o:['went','ate','saw','bought','walked'],a:4,h:'Regular berakhiran -ed dan mengikuti aturan.',w:'walk → walked. Yang lain irregular.',e:'walk → walked'},
+ {s:'Which pair of verbs is correct?',o:['catch – catched','teach – teached','swim – swam','bring – brang','think – thinked'],a:2,h:'Ingat pola -ought/-aught dan perubahan vokal.',w:'swim – swam. Yang benar: catch – caught, teach – taught, bring – brought, think – thought.',e:'swim – swam'}]},
+{id:'a',name:'Argumentative Text',col:'c3',
+ tips:[
+  ['Thesis','Ada di paragraf pertama. Cari <code>In my opinion, I think, should</code>.'],
+  ['Alasan (reasons)','Biasanya diurutkan dengan <code>First, Second, Moreover</code>. Setiap alasan harus mendukung thesis.'],
+  ['Transitional words','Tebak hubungan dua kalimat: sebab-akibat <code>Therefore</code>, kontras <code>However</code>, tambahan <code>Moreover</code>, contoh <code>For example</code>.'],
+  ['Modal should','<code>should</code> berarti saran. Setelahnya langsung verb 1, tanpa <code>to</code>: <code>should get</code>.'],
+  ['Klaim dan alasan','Alasan yang kuat membuktikan klaim, bukan hanya topik yang sama. Uji dengan kata “karena”.']],
+ gram:[
+  ['Should: untuk apa?','Tiga fungsi utama: <b>saran</b> (<i>You should rest.</i>), <b>pendapat atau rekomendasi</b> (<i>Schools should provide healthy food.</i>), dan <b>harapan</b> (<i>The bus should arrive soon.</i>). Dalam argumentative text, should dipakai untuk menyatakan posisi penulis (thesis) dan rekomendasi di akhir teks. Bandingkan dengan modal lain:<table class="vt"><tr><th>Modal</th><th>Makna</th><th>Contoh</th></tr><tr><td>should</td><td>saran atau pendapat (lunak)</td><td>You should drink more water.</td></tr><tr><td>must</td><td>kewajiban kuat atau aturan</td><td>You must wear a helmet.</td></tr><tr><td>can</td><td>kemampuan atau izin</td><td>She can swim well.</td></tr></table>'],
+  ['Should: bentuk dan rumus','<table class="vt"><tr><th>Bentuk</th><th>Rumus</th><th>Contoh</th></tr><tr><td>Positif</td><td>S + should + verb 1</td><td>Students should sleep early.</td></tr><tr><td>Negatif</td><td>S + should not (shouldn’t) + verb 1</td><td>Students should not skip breakfast.</td></tr><tr><td>Pertanyaan</td><td>Should + S + verb 1?</td><td>Should students wear uniforms?</td></tr><tr><td>Jawaban singkat</td><td>Yes, S should. / No, S shouldn’t.</td><td>Yes, they should.</td></tr></table><br>Aturan emas: setelah should <b>selalu verb 1</b>. Tidak ada -s, tidak ada to, tidak ada do/does/did, tidak ada V-ing atau V2.'],
+  ['Should: kesalahan umum','<table class="vt"><tr><th>Salah</th><th>Benar</th></tr><tr><td>She should studies.</td><td>She should study.</td></tr><tr><td>He should to go.</td><td>He should go.</td></tr><tr><td>Do we should leave?</td><td>Should we leave?</td></tr><tr><td>They should studying.</td><td>They should study.</td></tr><tr><td>They should not to litter.</td><td>They should not litter.</td></tr><tr><td>You shoulds rest.</td><td>You should rest.</td></tr></table>'],
+  ['Transitional words','Tambahan: <code>Moreover, Furthermore, In addition</code>. Kontras: <code>However, On the other hand</code>. Akibat: <code>Therefore, Thus, As a result</code>. Contoh: <code>For example, For instance</code>. Urutan: <code>First, Second, Finally</code>.'],
+  ['Cara memilih','Baca kalimat sebelum dan sesudah celah, lalu tanyakan hubungannya: tambahan, berlawanan, akibat, atau contoh.']],
+ text:{title:'Bring Your Own Bottle',p:['In my opinion, students should bring their own water bottles to school. First, a reusable bottle saves money because students do not need to buy plastic bottles every day. Second, it protects the environment. Fewer plastic bottles means less waste.','Therefore, schools should ask all students to bring bottles from home.']},
+ qs:[
+ {s:'Which sentence states the writer’s opinion?',o:['First, a reusable bottle saves money.','Fewer plastic bottles means less waste.','Students do not need to buy plastic bottles every day.','Second, it protects the environment.','In my opinion, students should bring their own water bottles to school.'],a:4,h:'Cari penanda pendapat di kalimat pertama.',w:'Opsi lain adalah alasan, bukan posisi penulis.',e:'In my opinion, students should bring their own water bottles to school.'},
+ {s:'According to the text, how does a reusable bottle save money?',o:['The school sells bottles at a lower price.','Students do not need to buy plastic bottles every day.','Reusable bottles are free from the shop.','Students drink less water at school.','Plastic bottles cost more at home.'],a:1,h:'Cari “saves money because …”.',w:'Kata because memberi sebabnya.',e:'…saves money because students do not need to buy plastic bottles every day.'},
+ {s:'The word “Therefore” in the last paragraph shows …',o:['a contrast','an example','a time','a result','an opinion'],a:3,h:'Hubungan antara paragraf pertama dan kalimat terakhir.',w:'Therefore = karena itu, hasil atau kesimpulan.',e:'…less waste. Therefore, schools should ask…'},
+ {s:'Which statement would the writer most likely agree with?',o:['Plastic bottles are cheaper than reusable bottles.','Students should buy a new bottle every week.','Using fewer plastic bottles helps the environment.','Water at school is not safe to drink.','Reusable bottles are harder to clean than plastic ones.'],a:2,h:'Pilih yang searah dengan alasan kedua.',w:'Opsi lain bertentangan atau tidak disebut di teks.',e:'Second, it protects the environment. Fewer plastic bottles means less waste.'},
+ {s:'The words “First” and “Second” are used to …',o:['tell a story in order of time.','show a contrast between two ideas.','ask the readers a question.','introduce an example.','list the writer’s reasons in order.'],a:4,h:'Apa yang disusun berurutan oleh kata itu?',w:'First dan Second mengurutkan alasan.',e:'First, … Second, …'},
+ {s:'Students ___ get enough sleep so they can focus in class.',o:['should to','should','do should','would to','are should'],a:1,h:'Modal diikuti verb 1 tanpa to.',w:'should + get.',e:'Students should get enough sleep…'},
+ {s:'Plastic takes hundreds of years to break down. ___, we should use less of it.',o:['However','For example','Therefore','In contrast','Meanwhile'],a:2,h:'Kalimat kedua adalah akibat dari kalimat pertama.',w:'Sebab-akibat memakai Therefore.',e:'Plastic… break down. Therefore, we should use less of it.'},
+ {s:'Claim: Schools should have more green areas.\nWhich reason supports the claim best?',o:['Plants make the air fresher and the school more comfortable.','Some schools have a new library.','Students like to play outside after lessons.','Green paint is cheaper than white paint.','Teachers use computers every day.'],a:0,h:'Alasan harus membuktikan klaim tentang green areas.',w:'Hanya opsi ini menjelaskan manfaat area hijau.',e:'Claim + because: green areas → fresher air, more comfortable school.'},
+ {s:'Smoking is dangerous. ___, it is very expensive.',o:['However','Therefore','Meanwhile','Moreover','For instance'],a:3,h:'Kalimat kedua menambah alasan buruk yang sama arah.',w:'Penambahan argumen searah: Moreover.',e:'Smoking is dangerous. Moreover, it is very expensive.'},
+ {s:'Children ___ not play games all night.',o:['should to','shoulds','are should','should be','should'],a:4,h:'Modal langsung diikuti not dan verb 1.',w:'should + not + play.',e:'Children should not play games all night.'},
+ {s:'Online classes are convenient. ___, some students find them boring.',o:['Therefore','Moreover','However','For example','Because'],a:2,h:'Hubungan dua kalimat: sejalan atau berlawanan?',w:'Kontras: However.',e:'convenient. However, … boring.'},
+ {s:'Which sentence uses “should” correctly?',o:['He should studies harder.','He should study harder.','He should studying harder.','He should to study harder.','He shoulds study harder.'],a:1,h:'Setelah should, bentuk verb apa?',w:'should + verb 1 tanpa to dan tanpa -s.',e:'He should study harder.'},
+ {s:'Should students ___ homework every day?',o:['do','does','to do','doing','did'],a:0,h:'Pada pertanyaan, verb setelah subjek berbentuk dasar.',w:'Should + S + verb 1.',e:'Should students do…?'},
+ {s:'What does “should” express in this sentence?\nYou should drink more water.',o:['advice','ability','habit','permission','a past event'],a:0,h:'Should menyatakan hal yang baik untuk dilakukan.',w:'Should = saran.',e:'You should drink more water.'},
+ {s:'Students ___ copy their friends’ answers.',o:['should not to','not should','do not should','should not','should no'],a:3,h:'Bentuk negatif modal: modal + not + verb 1.',w:'should not + copy.',e:'Students should not copy…'},
+ {s:'Should we wear uniforms? — Yes, ___.',o:['we should to','we do','we should be','we are','we should'],a:4,h:'Jawaban singkat mengulang modalnya.',w:'Yes, we should.',e:'Yes, we should.'},
+ {s:'Which question is correct?',o:['We should go to the library?','Do we should go to the library?','Should we go to the library?','Should we to go to the library?','Should we goes to the library?'],a:2,h:'Modal dipindah ke depan subjek, tanpa do.',w:'Should + S + verb 1.',e:'Should we go to the library?'},
+ {s:'Which sentence is the best thesis statement using “should”?',o:['Many students use phones.','Schools should limit phone use in class.','Phones were invented in 1973.','Some phones are expensive.','Phones can be red or black.'],a:1,h:'Thesis menyatakan posisi atau pendapat penulis.',w:'Hanya opsi ini berisi pendapat/rekomendasi dengan should.',e:'Schools should limit phone use in class.'}]}
+];
+var L='ABCDE',state={},cur=0,pres=false,pi=0,slides=[];
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function score(b){var s=0;BABS[b].qs.forEach(function(q,i){if(state[b+'-'+i]&&state[b+'-'+i].ok)s++});return s}
+function total(){return score(0)+score(1)+score(2)}
+function refresh(){
+ document.getElementById('total').textContent='Skor total '+total()+'/'+BABS.reduce(function(a,b){return a+b.qs.length},0);
+ BABS.forEach(function(b,i){var t=document.getElementById('sc'+i);if(t)t.textContent=score(i)+'/'+b.qs.length});
+ var s=document.getElementById('summary');if(s){var sc=score(cur),n=0,N=BABS[cur].qs.length;BABS[cur].qs.forEach(function(q,i){if(state[cur+'-'+i])n++});
+  s.querySelector('b').textContent='Skor bab ini: '+sc+'/'+N;s.querySelector('.bar i').style.width=(n/N*100)+'%';
+  s.querySelector('span').textContent=n<N?('Sudah dijawab '+n+' dari '+N+' soal.'):(sc/N>=.85?'Bagus sekali, bab ini sudah kuat.':sc/N>=.6?'Cukup baik. Baca ulang strategi, lalu ulangi soal yang salah.':'Baca ulang strategi bab ini, lalu coba lagi dari awal.')}
+}
+function render(){
+ var b=BABS[cur],m=document.getElementById('main');m.innerHTML='';
+ document.documentElement.style.setProperty('--acc','var(--'+b.col+')');document.documentElement.style.setProperty('--accbg','var(--'+b.col+'bg)');
+ if(cur===0){m.appendChild(el('h2',null,'Strategi umum: Baca, Cari, Coret, Cek'));var g=el('div','steps');
+  [['1 · Baca','Baca pertanyaan dulu. Tentukan jenis soalnya: gagasan utama, detail, rujukan, sinonim, atau tata bahasa.'],['2 · Cari','Temukan satu kalimat di teks yang menjawab pertanyaan. Garis bawahi.'],['3 · Coret','Coret pengecoh: tidak ada di teks, membalik isi teks, atau hanya benar sebagian.'],['4 · Cek','Pastikan jawabanmu menjawab pertanyaan yang ditanyakan, bukan topik yang mirip.']].forEach(function(x){g.appendChild(el('div','step','<b>'+x[0]+'</b>'+x[1]))});m.appendChild(g)}
+ m.appendChild(el('h2',null,'Strategi '+b.name));var st=el('div','strat');b.tips.forEach(function(t){st.appendChild(el('div','tip','<b>'+t[0]+'</b><span>'+t[1]+'</span>'))});m.appendChild(st);
+ m.appendChild(el('h2',null,'Baca teks ini'));var tx=el('div','text','<h3>'+b.text.title+'</h3>'+b.text.p.map(function(p){return '<p>'+p+'</p>'}).join(''));m.appendChild(tx);
+ b.qs.forEach(function(q,i){if(i<5){var c=card(q,i);c.dataset.r='1';m.appendChild(c)}});
+ m.appendChild(el('h2',null,'Ringkasan grammar: '+b.name));var gs=el('div','strat');b.gram.forEach(function(t){gs.appendChild(el('div','tip','<b>'+t[0]+'</b><span>'+t[1]+'</span>'))});m.appendChild(gs);
+ m.appendChild(el('h2',null,'Latihan grammar'));
+ b.qs.forEach(function(q,i){if(i>=5)m.appendChild(card(q,i))});
+ var s=el('div','sum','<b></b><div class="bar"><i></i></div><span></span> <button class="reset" id="rs">Ulangi bab ini</button>');s.id='summary';m.appendChild(s);
+ document.getElementById('rs').onclick=function(){b.qs.forEach(function(q,i){delete state[cur+'-'+i]});render();refresh();window.scrollTo(0,0)};
+ refresh();
+ if(pres)present(m);
+}
+function present(m){
+ var kids=Array.prototype.slice.call(m.children),pend=[],text=null;slides=[];
+ kids.forEach(function(n){
+  if(n.tagName==='H2'){pend.push(n);return}
+  if(n.classList.contains('text'))text=n;
+  var sl=pend.slice();pend=[];
+  if(n.dataset.r==='1'&&text){var w=el('div','two');w.appendChild(text.cloneNode(true));w.appendChild(n);sl.push(w)}else sl.push(n);
+  slides.push(sl)});
+ if(pi>=slides.length)pi=slides.length-1;show()}
+function show(){
+ var m=document.getElementById('main');m.replaceChildren.apply(m,slides[pi]);
+ document.getElementById('pn').textContent=(pi+1)+' / '+slides.length;
+ document.getElementById('pv').disabled=pi===0;document.getElementById('nx').disabled=pi===slides.length-1;
+ refresh();window.scrollTo(0,0)}
+function go(d){if(!pres)return;var n=pi+d;if(n<0||n>=slides.length)return;pi=n;show()}
+document.getElementById('pv').onclick=function(){go(-1)};document.getElementById('nx').onclick=function(){go(1)};
+document.getElementById('pbtn').onclick=function(){pres=!pres;pi=0;document.body.classList.toggle('pres',pres);
+ if(pres)document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');
+ this.textContent=pres?'Keluar mode proyektor':'Mode proyektor';render();window.scrollTo(0,0)};
+document.addEventListener('keydown',function(e){if(!pres)return;
+ if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(1)}
+ else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(-1)}
+ else{var k='abcde'.indexOf(e.key.toLowerCase());if(e.key.length===1&&k>=0){var o=document.querySelectorAll('#main .opts')[0];if(o&&o.children[k]&&!o.children[k].disabled)o.children[k].click()}
+  else if(e.key.toLowerCase()==='h'){var hb=document.querySelector('#main .hintbtn');if(hb&&!hb.hidden)hb.click()}}});
+function card(q,i){
+ var key=cur+'-'+i,d=el('div','q'),h=el('div','qn','Soal '+(i+1)),st=el('div','stem');st.textContent=q.s;d.appendChild(h);d.appendChild(st);
+ var os=el('div','opts');d.appendChild(os);var hb=el('button','hintbtn','Lihat hint');hb.type='button';var hd=el('div','hint');hd.hidden=true;hd.textContent='Hint: '+q.h;hb.onclick=function(){hd.hidden=!hd.hidden;hb.textContent=hd.hidden?'Lihat hint':'Sembunyikan hint'};
+ var fb=el('div','fb');fb.hidden=true;
+ q.o.forEach(function(t,k){var b=el('button','opt','<span class="l">'+L[k]+'.</span><span></span>');b.type='button';b.lastChild.textContent=t;b.onclick=function(){if(state[key])return;state[key]={ok:k===q.a,pick:k};lock();refresh()};os.appendChild(b)});
+ d.appendChild(hb);d.appendChild(hd);d.appendChild(fb);
+ function lock(){var s=state[key];var bs=os.children;for(var k=0;k<bs.length;k++){bs[k].disabled=true;if(k===q.a)bs[k].classList.add('right');else if(k===s.pick)bs[k].classList.add('wrong')}
+  hb.hidden=true;hd.hidden=true;fb.hidden=false;fb.className='fb '+(s.ok?'ok':'no');
+  fb.innerHTML='<strong>'+(s.ok?'Benar.':'Belum tepat. Jawaban: '+L[q.a]+'.')+'</strong>'+q.w+'<div class="ev">“'+q.e+'”</div>'}
+ if(state[key])lock();
+ return d}
+var tb=document.getElementById('tabs');
+BABS.forEach(function(b,i){var t=el('button','tab','<span>'+b.name+'</span><span class="sc" id="sc'+i+'">0/'+b.qs.length+'</span>');t.type='button';t.setAttribute('role','tab');t.setAttribute('aria-selected',i===0);t.onclick=function(){cur=i;pi=0;Array.prototype.forEach.call(tb.children,function(x,k){x.setAttribute('aria-selected',k===i)});render();window.scrollTo(0,0)};tb.appendChild(t)});
+render();
+</script>
+
+</body>
+</html>
